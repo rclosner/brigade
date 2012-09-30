@@ -20,7 +20,8 @@ $ ->
 
   $('ul#site-sections li').mouseenter ->
     desc = $(this).data('desc')
-    $('.talker').show().html(desc);
+    unless $('.talker').html() == desc
+      $('.talker').show().html(desc);
 
   $('ul#site-sections li').mouseleave ->
     $('.talker').hide().html("");
